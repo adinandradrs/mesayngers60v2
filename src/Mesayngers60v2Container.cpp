@@ -22,7 +22,7 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
 
     iToDoLabel = new (ELeave) CEikLabel;
     iToDoLabel->SetContainerWindowL( *this );
-    iToDoLabel->SetTextL( _L("Adinandra Dharmasurya\nwas here") );
+    iToDoLabel->SetTextL( _L("Adinandra D.\nis here") );
 
     SetRect(aRect);
     ActivateL();
