@@ -18,11 +18,11 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
 
     iLabel = new (ELeave) CEikLabel;
     iLabel->SetContainerWindowL( *this );
-    iLabel->SetTextL( _L("Example View") );
+    iLabel->SetTextL( _L("Hello world Symbian") );
 
     iToDoLabel = new (ELeave) CEikLabel;
     iToDoLabel->SetContainerWindowL( *this );
-    iToDoLabel->SetTextL( _L("Add Your controls\n here") );
+    iToDoLabel->SetTextL( _L("Adinandra Dharmasurya\nwas here") );
 
     SetRect(aRect);
     ActivateL();
@@ -34,8 +34,8 @@ CMesayngers60v2Container::~CMesayngers60v2Container() {
 }
 
 void CMesayngers60v2Container::SizeChanged() {
-    iLabel->SetExtent( TPoint(10,10), iLabel->MinimumSize() );
-    iToDoLabel->SetExtent( TPoint(10,100), iToDoLabel->MinimumSize() );
+    iLabel->SetExtent( TPoint(10, 10), iLabel->MinimumSize() );
+    iToDoLabel->SetExtent( TPoint(10, 50), iToDoLabel->MinimumSize() );
 }
 
 TInt CMesayngers60v2Container::CountComponentControls() const {
