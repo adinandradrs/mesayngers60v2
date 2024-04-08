@@ -11,56 +11,22 @@
 * ============================================================================
 */
 
-// INCLUDE FILES
 #include    "Mesayngers60v2App.h"
 #include    "Mesayngers60v2Document.h"
 
-// ================= MEMBER FUNCTIONS =======================
-
-// ---------------------------------------------------------
-// CMesayngers60v2App::AppDllUid()
-// Returns application UID
-// ---------------------------------------------------------
-//
-TUid CMesayngers60v2App::AppDllUid() const
-    {
+TUid CMesayngers60v2App::AppDllUid() const {
     return KUidmesayngers60v2;
-    }
+}
 
    
-// ---------------------------------------------------------
-// CMesayngers60v2App::CreateDocumentL()
-// Creates CMesayngers60v2Document object
-// ---------------------------------------------------------
-//
-CApaDocument* CMesayngers60v2App::CreateDocumentL()
-    {
+CApaDocument* CMesayngers60v2App::CreateDocumentL() {
     return CMesayngers60v2Document::NewL( *this );
-    }
+}
 
-// ================= OTHER EXPORTED FUNCTIONS ==============
-//
-// ---------------------------------------------------------
-// NewApplication() 
-// Constructs CMesayngers60v2App
-// Returns: created application object
-// ---------------------------------------------------------
-//
-EXPORT_C CApaApplication* NewApplication()
-    {
+EXPORT_C CApaApplication* NewApplication() {
     return new CMesayngers60v2App;
-    }
+}
 
-// ---------------------------------------------------------
-// E32Dll(TDllReason) 
-// Entry point function for EPOC Apps
-// Returns: KErrNone: No error
-// ---------------------------------------------------------
-//
-GLDEF_C TInt E32Dll( TDllReason )
-    {
+GLDEF_C TInt E32Dll( TDllReason ) {
     return KErrNone;
-    }
-
-// End of File  
-
+}

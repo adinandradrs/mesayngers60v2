@@ -13,56 +13,29 @@
 #ifndef MESAYNGERS60V2DOCUMENT_H
 #define MESAYNGERS60V2DOCUMENT_H
 
-// INCLUDES
 #include <akndoc.h>
-   
-// CONSTANTS
 
-// FORWARD DECLARATIONS
 class  CEikAppUi;
 
-// CLASS DECLARATION
-
-/**
-*  CMesayngers60v2Document application class.
-*/
-class CMesayngers60v2Document : public CAknDocument
-    {
-    public: // Constructors and destructor
-        /**
-        * Two-phased constructor.
-        */
+class CMesayngers60v2Document : public CAknDocument {
+    public:
         static CMesayngers60v2Document* NewL(CEikApplication& aApp);
-
-        /**
-        * Destructor.
-        */
         virtual ~CMesayngers60v2Document();
 
-    public: // New functions
+    public: 
 
-    public: // Functions from base classes
-    protected:  // New functions
+    public: 
 
-    protected:  // Functions from base classes
+    protected:
+
+    protected:
 
     private:
-
-        /**
-        * EPOC default constructor.
-        */
         CMesayngers60v2Document(CEikApplication& aApp);
         void ConstructL();
 
     private:
-
-        /**
-        * From CEikDocument, create CMesayngers60v2AppUi "App UI" object.
-        */
         CEikAppUi* CreateAppUiL();
-    };
+};
 
 #endif
-
-// End of File
-

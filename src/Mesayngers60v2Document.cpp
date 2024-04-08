@@ -10,48 +10,26 @@
 * ============================================================================
 */
 
-// INCLUDE FILES
 #include "Mesayngers60v2Document.h"
 #include "Mesayngers60v2AppUi.h"
 
-// ================= MEMBER FUNCTIONS =======================
+CMesayngers60v2Document::CMesayngers60v2Document(CEikApplication& aApp) : CAknDocument(aApp) {
+}
 
-// constructor
-CMesayngers60v2Document::CMesayngers60v2Document(CEikApplication& aApp)
-: CAknDocument(aApp)    
-    {
-    }
+CMesayngers60v2Document::~CMesayngers60v2Document() {
+}
 
-// destructor
-CMesayngers60v2Document::~CMesayngers60v2Document()
-    {
-    }
+void CMesayngers60v2Document::ConstructL() {
+}
 
-// EPOC default constructor can leave.
-void CMesayngers60v2Document::ConstructL()
-    {
-    }
-
-// Two-phased constructor.
-CMesayngers60v2Document* CMesayngers60v2Document::NewL(
-        CEikApplication& aApp)     // CMesayngers60v2App reference
-    {
+CMesayngers60v2Document* CMesayngers60v2Document::NewL(CEikApplication& aApp) {
     CMesayngers60v2Document* self = new (ELeave) CMesayngers60v2Document( aApp );
     CleanupStack::PushL( self );
     self->ConstructL();
     CleanupStack::Pop();
-
     return self;
-    }
+}
     
-// ----------------------------------------------------
-// CMesayngers60v2Document::CreateAppUiL()
-// constructs CMesayngers60v2AppUi
-// ----------------------------------------------------
-//
-CEikAppUi* CMesayngers60v2Document::CreateAppUiL()
-    {
+CEikAppUi* CMesayngers60v2Document::CreateAppUiL() {
     return new (ELeave) CMesayngers60v2AppUi;
-    }
-
-// End of File  
+}

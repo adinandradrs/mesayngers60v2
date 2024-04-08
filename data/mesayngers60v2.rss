@@ -32,11 +32,11 @@ RESOURCE RSS_SIGNATURE { }
 RESOURCE TBUF { buf = "mesayngers60v2"; }
 
 RESOURCE EIK_APP_INFO
-    {
+{
     hotkeys = r_mesayngers60v2_hotkeys;
     menubar = r_mesayngers60v2_menubar;
     cba = R_AVKON_SOFTKEYS_OPTIONS_BACK;     
-    }
+}
 
 //----------------------------------------------------
 //   
@@ -45,12 +45,12 @@ RESOURCE EIK_APP_INFO
 //----------------------------------------------------
 //
 RESOURCE HOTKEYS r_mesayngers60v2_hotkeys
-    {
+{
     control =
-        {
+    {
         HOTKEY { command = EAknCmdExit; key='e'; }
-        };
-    }
+    };
+}
 
 //----------------------------------------------------
 //   
@@ -59,12 +59,12 @@ RESOURCE HOTKEYS r_mesayngers60v2_hotkeys
 //----------------------------------------------------
 //
 RESOURCE MENU_BAR r_mesayngers60v2_menubar
-    {
+{
     titles =
         {
         MENU_TITLE { menu_pane = r_mesayngers60v2_menu; txt = "File"; }
         };
-    }
+}
 
 //----------------------------------------------------
 //   
@@ -73,13 +73,13 @@ RESOURCE MENU_BAR r_mesayngers60v2_menubar
 //----------------------------------------------------
 //
 RESOURCE MENU_PANE r_mesayngers60v2_menu
-    {
+{
     items =
-        {
+    {
         MENU_ITEM { command = Emesayngers60v2CmdAppTest; txt = qtn_appl_test; },
         MENU_ITEM { command = EAknCmdExit; txt = qtn_options_exit; }
-        };
-    }
+    };
+}
 
 
 // End of File

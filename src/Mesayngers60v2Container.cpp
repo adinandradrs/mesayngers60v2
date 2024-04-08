@@ -10,21 +10,10 @@
 * ============================================================================
 */
 
-// INCLUDE FILES
 #include "Mesayngers60v2Container.h"
+#include <eiklabel.h>
 
-#include <eiklabel.h>  // for example label control
-
-
-// ================= MEMBER FUNCTIONS =======================
-
-// ---------------------------------------------------------
-// CMesayngers60v2Container::ConstructL(const TRect& aRect)
-// EPOC two phased constructor
-// ---------------------------------------------------------
-//
-void CMesayngers60v2Container::ConstructL(const TRect& aRect)
-    {
+void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     CreateWindowL();
 
     iLabel = new (ELeave) CEikLabel;
@@ -37,78 +26,41 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect)
 
     SetRect(aRect);
     ActivateL();
-    }
+}
 
-// Destructor
-CMesayngers60v2Container::~CMesayngers60v2Container()
-    {
+CMesayngers60v2Container::~CMesayngers60v2Container() {
     delete iLabel;
     delete iToDoLabel;
-    }
+}
 
-// ---------------------------------------------------------
-// CMesayngers60v2Container::SizeChanged()
-// Called by framework when the view size is changed
-// ---------------------------------------------------------
-//
-void CMesayngers60v2Container::SizeChanged()
-    {
-    // TODO: Add here control resize code etc.
+void CMesayngers60v2Container::SizeChanged() {
     iLabel->SetExtent( TPoint(10,10), iLabel->MinimumSize() );
     iToDoLabel->SetExtent( TPoint(10,100), iToDoLabel->MinimumSize() );
-    }
+}
 
-// ---------------------------------------------------------
-// CMesayngers60v2Container::CountComponentControls() const
-// ---------------------------------------------------------
-//
-TInt CMesayngers60v2Container::CountComponentControls() const
-    {
-    return 2; // return nbr of controls inside this container
-    }
+TInt CMesayngers60v2Container::CountComponentControls() const {
+    return 2;
+}
 
-// ---------------------------------------------------------
-// CMesayngers60v2Container::ComponentControl(TInt aIndex) const
-// ---------------------------------------------------------
-//
-CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const
-    {
-    switch ( aIndex )
-        {
+CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
+    switch ( aIndex ) {
         case 0:
             return iLabel;
         case 1:
             return iToDoLabel;
         default:
             return NULL;
-        }
     }
+}
 
-// ---------------------------------------------------------
-// CMesayngers60v2Container::Draw(const TRect& aRect) const
-// ---------------------------------------------------------
-//
-void CMesayngers60v2Container::Draw(const TRect& aRect) const
-    {
+void CMesayngers60v2Container::Draw(const TRect& aRect) const {
     CWindowGc& gc = SystemGc();
-    // TODO: Add your drawing code here
-    // example code...
     gc.SetPenStyle( CGraphicsContext::ENullPen );
     gc.SetBrushColor( KRgbGray );
     gc.SetBrushStyle( CGraphicsContext::ESolidBrush );
     gc.DrawRect( aRect );
-    }
+}
 
-// ---------------------------------------------------------
-// CMesayngers60v2Container::HandleControlEventL(
-//     CCoeControl* aControl,TCoeEvent aEventType)
-// ---------------------------------------------------------
-//
-void CMesayngers60v2Container::HandleControlEventL(
-    CCoeControl* /*aControl*/,TCoeEvent /*aEventType*/)
-    {
-    // TODO: Add your control event handler code here
-    }
-
-
-// End of File  
+void CMesayngers60v2Container::HandleControlEventL(CCoeControl*, TCoeEvent) {
+    
+}

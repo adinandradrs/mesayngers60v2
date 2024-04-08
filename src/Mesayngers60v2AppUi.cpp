@@ -10,7 +10,6 @@
 * ============================================================================
 */
 
-// INCLUDE FILES
 #include "Mesayngers60v2AppUi.h"
 #include "Mesayngers60v2Container.h" 
 #include <mesayngers60v2.rsg>
@@ -18,88 +17,44 @@
 
 #include <avkon.hrh>
 
-// ================= MEMBER FUNCTIONS =======================
-//
-// ----------------------------------------------------------
-// CMesayngers60v2AppUi::ConstructL()
-// 
-// ----------------------------------------------------------
-//
-void CMesayngers60v2AppUi::ConstructL()
-    {
+void CMesayngers60v2AppUi::ConstructL() {
     BaseConstructL();
 
     iAppContainer = new (ELeave) CMesayngers60v2Container;
     iAppContainer->SetMopParent( this );
     iAppContainer->ConstructL( ClientRect() );
     AddToStackL( iAppContainer );
-    }
+}
 
-// ----------------------------------------------------
-// CMesayngers60v2AppUi::~CMesayngers60v2AppUi()
-// Destructor
-// Frees reserved resources
-// ----------------------------------------------------
-//
-CMesayngers60v2AppUi::~CMesayngers60v2AppUi()
-    {
-    if (iAppContainer)
-        {
+CMesayngers60v2AppUi::~CMesayngers60v2AppUi() {
+    if (iAppContainer) {
         RemoveFromStack( iAppContainer );
         delete iAppContainer;
-        }
-   }
-
-// ------------------------------------------------------------------------------
-// CMesayngers60v2AppUi::DynInitMenuPaneL(TInt aResourceId,CEikMenuPane* aMenuPane)
-//  This function is called by the EIKON framework just before it displays
-//  a menu pane. Its default implementation is empty, and by overriding it,
-//  the application can set the state of menu items dynamically according
-//  to the state of application data.
-// ------------------------------------------------------------------------------
-//
-void CMesayngers60v2AppUi::DynInitMenuPaneL(
-    TInt /*aResourceId*/,CEikMenuPane* /*aMenuPane*/)
-    {
     }
+}
 
-// ----------------------------------------------------
-// CMesayngers60v2AppUi::HandleKeyEventL(
-//     const TKeyEvent& aKeyEvent,TEventCode /*aType*/)
-// takes care of key event handling
-// ----------------------------------------------------
-//
-TKeyResponse CMesayngers60v2AppUi::HandleKeyEventL(
-    const TKeyEvent& /*aKeyEvent*/,TEventCode /*aType*/)
-    {
+void CMesayngers60v2AppUi::DynInitMenuPaneL(TInt, CEikMenuPane* ) {
+}
+
+
+TKeyResponse CMesayngers60v2AppUi::HandleKeyEventL(const TKeyEvent&, TEventCode) {
     return EKeyWasNotConsumed;
-    }
+}
 
-// ----------------------------------------------------
-// CMesayngers60v2AppUi::HandleCommandL(TInt aCommand)
-// takes care of command handling
-// ----------------------------------------------------
-//
-void CMesayngers60v2AppUi::HandleCommandL(TInt aCommand)
-    {
-    switch ( aCommand )
-        {
+void CMesayngers60v2AppUi::HandleCommandL(TInt aCommand) {
+    switch ( aCommand ) {
         case EAknSoftkeyBack:
         case EEikCmdExit:
-            {
+        {
             Exit();
             break;
-            }
+        }
         case Emesayngers60v2CmdAppTest:
-            {
+        {
             iEikonEnv->InfoMsg(_L("test"));
             break;
-            }
-        // TODO: Add Your command handling code here
-
+        }
         default:
             break;      
         }
-    }
-
-// End of File  
+}

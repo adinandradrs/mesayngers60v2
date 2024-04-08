@@ -15,13 +15,8 @@
 #ifndef MESAYNGERS60V2_HRH
 #define MESAYNGERS60V2_HRH
 
-enum Tmesayngers60v2CommandIds
-    {
+enum Tmesayngers60v2CommandIds {
     Emesayngers60v2CmdAppTest = 1
-    };
+};
 
-
-
-
-
-#endif      // MESAYNGERS60V2_HRH
+#endif

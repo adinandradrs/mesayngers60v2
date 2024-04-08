@@ -14,19 +14,8 @@
 * ============================================================================
 */
 
-// LOCALISATION STRINGS
-
-//d:Command in options menu.
-//d:Example application spesific command.
-//l:list_single_popup_submenu_pane_1
-//
 #define qtn_appl_test "Test"
-
-
-// example caption strings for app
 #define qtn_app_caption_string "MesayngerIM"
-
 #define qtn_app_short_caption_string "MesayngerIM"
-
 
 // End of File
