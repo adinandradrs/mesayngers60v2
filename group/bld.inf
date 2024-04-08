@@ -1,0 +1,18 @@
+/*
+* ============================================================================
+*  Name     : bld.inf
+*  Part of  : mesayngers60v2
+*  Created  : 4/9/2024 by adinandradrs
+*  Description:
+*	 This file provides the information required for building the
+*    whole of a mesayngers60v2.
+*  Version  :
+*  Copyright: 
+* ============================================================================
+*/
+
+
+PRJ_MMPFILES
+
+\SYMBIAN\SYMDEV\mesayngers60v2\group\mesayngers60v2.mmp
+
