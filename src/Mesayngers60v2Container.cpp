@@ -41,7 +41,7 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
 CMesayngers60v2Container::~CMesayngers60v2Container() {
     delete iLabel;
     delete iToDoLabel;
-    delete iEdwin;
+    //delete iEdwin;
 }
 
 void CMesayngers60v2Container::SizeChanged() {
@@ -50,7 +50,7 @@ void CMesayngers60v2Container::SizeChanged() {
 }
 
 TInt CMesayngers60v2Container::CountComponentControls() const {
-    return 3;
+    return 2;
 }
 
 CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
@@ -59,8 +59,8 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
             return iLabel;
         case 1:
             return iToDoLabel;
-        case 2:
-            return iEdwin;
+        // case 2:
+        //     return iEdwin;
         default:
             return NULL;
     }
