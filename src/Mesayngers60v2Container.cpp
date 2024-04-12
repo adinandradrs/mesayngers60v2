@@ -28,11 +28,11 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
 
     //TResourceReader reader;
     
-    // iEdwin = new (ELeave) CEikEdwin;
-    // iEdwin->SetContainerWindowL( *this );
+    iEdwin = new (ELeave) CEikEdwin;
+    iEdwin->SetContainerWindowL( *this );
     //iEdwin->ConstructFromResourceL(reader);
-    // CleanupStack::PopAndDestroy();
-    // iEdwin->SetExtent( TPoint(10, 30), iEdwin->MinimumSize() );
+    CleanupStack::PopAndDestroy();
+    iEdwin->SetExtent( TPoint(10, 45), iEdwin->MinimumSize() );
 
     SetRect(aRect);
     ActivateL();
@@ -41,7 +41,7 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
 CMesayngers60v2Container::~CMesayngers60v2Container() {
     delete iLabel;
     delete iToDoLabel;
-    //delete iEdwin;
+    delete iEdwin;
 }
 
 void CMesayngers60v2Container::SizeChanged() {
@@ -50,7 +50,7 @@ void CMesayngers60v2Container::SizeChanged() {
 }
 
 TInt CMesayngers60v2Container::CountComponentControls() const {
-    return 2;
+    return 3;
 }
 
 CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
@@ -59,8 +59,8 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
             return iLabel;
         case 1:
             return iToDoLabel;
-        // case 2:
-        //     return iEdwin;
+        case 2:
+            return iEdwin;
         default:
             return NULL;
     }
