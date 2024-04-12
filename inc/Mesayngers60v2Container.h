@@ -37,6 +37,7 @@ class CMesayngers60v2Container : public CCoeControl, MCoeControlObserver {
     private:        
         CEikLabel* iLabel;
         CEikLabel* iToDoLabel;
+        CEikLabel* iExtLabel;
         CEikEdwin* iEdwin;
 
 };
