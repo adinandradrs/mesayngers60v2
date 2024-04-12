@@ -12,17 +12,25 @@
 
 #include "Mesayngers60v2Container.h"
 #include <eiklabel.h>
+#include <barsread.h>
+#include <eikedwin.h> 
 
 void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     CreateWindowL();
-
+    
     iLabel = new (ELeave) CEikLabel;
     iLabel->SetContainerWindowL( *this );
     iLabel->SetTextL( _L("Hello world Symbian") );
 
     iToDoLabel = new (ELeave) CEikLabel;
     iToDoLabel->SetContainerWindowL( *this );
-    iToDoLabel->SetTextL( _L("Adinandra D.\nis here") );
+    iToDoLabel->SetTextL( _L("Adinandra D. is here") );
+
+    TResourceReader reader;
+    
+    iEdwin = new (ELeave) CEikEdwin;
+    iEdwin->SetContainerWindowL(*this);
+    iEdwin->ConstructFromResourceL(reader);
 
     SetRect(aRect);
     ActivateL();
@@ -31,15 +39,17 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
 CMesayngers60v2Container::~CMesayngers60v2Container() {
     delete iLabel;
     delete iToDoLabel;
+    delete iEdwin;
 }
 
 void CMesayngers60v2Container::SizeChanged() {
     iLabel->SetExtent( TPoint(10, 10), iLabel->MinimumSize() );
-    iToDoLabel->SetExtent( TPoint(10, 50), iToDoLabel->MinimumSize() );
+    iToDoLabel->SetExtent( TPoint(10, 20), iToDoLabel->MinimumSize() );
+    iEdwin->SetExtent( TPoint(10, 30), iEdwin->MinimumSize() );
 }
 
 TInt CMesayngers60v2Container::CountComponentControls() const {
-    return 2;
+    return 3;
 }
 
 CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
@@ -48,6 +58,8 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
             return iLabel;
         case 1:
             return iToDoLabel;
+        case 2:
+            return iEdwin;
         default:
             return NULL;
     }
