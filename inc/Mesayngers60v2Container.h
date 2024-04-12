@@ -17,7 +17,6 @@
    
 class CEikLabel;
 class CEikEdwin;
-class CEikGlobalTextEditor;
 
 class CMesayngers60v2Container : public CCoeControl, MCoeControlObserver {
     public:
@@ -39,7 +38,6 @@ class CMesayngers60v2Container : public CCoeControl, MCoeControlObserver {
         CEikLabel* iLabel;
         CEikLabel* iToDoLabel;
         CEikEdwin* iEdwin;
-        CEikGlobalTextEditor* iGTextEd;
 
 };
 
