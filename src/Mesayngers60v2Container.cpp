@@ -31,6 +31,7 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iEdwin = new (ELeave) CEikEdwin;
     iEdwin->SetContainerWindowL(*this);
     iEdwin->ConstructFromResourceL(reader);
+    CleanupStack::PopAndDestroy();
 
     SetRect(aRect);
     ActivateL();
