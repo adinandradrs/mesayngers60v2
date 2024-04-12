@@ -15,7 +15,9 @@
 
 #include <coecntrl.h>
    
-class CEikLabel; 
+class CEikLabel;
+class CEikEdwin;
+class CEikGlobalTextEditor;
 
 class CMesayngers60v2Container : public CCoeControl, MCoeControlObserver {
     public:
@@ -36,6 +38,8 @@ class CMesayngers60v2Container : public CCoeControl, MCoeControlObserver {
     private:        
         CEikLabel* iLabel;
         CEikLabel* iToDoLabel;
+        CEikEdwin* iEdwin;
+        CEikGlobalTextEditor* iGTextEd;
 
 };
 
