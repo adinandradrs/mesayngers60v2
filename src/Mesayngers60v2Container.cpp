@@ -40,7 +40,6 @@ CMesayngers60v2Container::~CMesayngers60v2Container() {
     delete iLabel;
     delete iToDoLabel;
     delete iExtLabel;
-    delete iEdwin;
 }
 
 void CMesayngers60v2Container::SizeChanged() {
