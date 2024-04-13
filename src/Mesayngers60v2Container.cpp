@@ -14,8 +14,10 @@
 #include <eiklabel.h>
 #include <barsread.h>
 #include <eikedwin.h>
+#include <AknExEditor.rsg>
 
 const TInt KNumberOfControls = 4;
+const TInt KBufLength = 64;
 
 enum TControls {
     ELabel,
@@ -47,8 +49,11 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iExtLabel->SetTextL( _L("Testing") );
     iExtLabel->SetExtent( TPoint(10, 30), iExtLabel->MinimumSize() );
 
+    TBuf<KBufLength> text;
+    iCoeEnv->CreateResourceReaderLC(reader, R_AKNEXEDITOR_VIEW1_EDWIN);
     iEdwin = new (ELeave) CEikEdwin;
     iEdwin->SetContainerWindowL(*this);
+    iEdwin->ConstructFromResourceL(reader);
     CleanupStack::PopAndDestroy(); 
     iEdwin->SetExtent(TPoint(10, 60), iEdwin->MinimumSize());
 
