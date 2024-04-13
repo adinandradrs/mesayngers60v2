@@ -48,6 +48,7 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iExtLabel->SetTextL( _L("Testing") );
     iExtLabel->SetExtent( TPoint(10, 30), iExtLabel->MinimumSize() );
 
+    TResourceReader reader;
     TBuf<KBufLength> text;
     iCoeEnv->CreateResourceReaderLC(reader, R_AKNEXEDITOR_VIEW1_EDWIN);
     iEdwin = new (ELeave) CEikEdwin;
