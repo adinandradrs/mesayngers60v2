@@ -83,9 +83,9 @@ RESOURCE MENU_PANE r_mesayngers60v2_menu
 RESOURCE EDWIN r_mesayngers60v2_edwin
 {
     flags = EAknEditorFlagDefault;
-    width = qnn_mesayngers60v2_view1_edwin_width;
-    lines= qnn_mesayngers60v2_view1_edwin_height;
-    maxlength = qnn_mesayngers60v2_view1_edwin_maxlength;
+    width = qnn_mesayngers60v2_edwin_width;
+    lines= qnn_mesayngers60v2_edwin_height;
+    maxlength = qnn_mesayngers60v2_edwin_maxlength;
 }
 
 RESOURCE EDWIN r_mesayngers60v2_extra_edwin
