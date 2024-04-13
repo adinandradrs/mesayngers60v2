@@ -80,7 +80,7 @@ RESOURCE MENU_PANE r_mesayngers60v2_menu
     };
 }
 
-RESOURCE EDWIN r_mesayngers60v2_view1_edwin
+RESOURCE EDWIN r_mesayngers60v2_edwin
 {
     flags = EAknEditorFlagDefault;
     width = qnn_mesayngers60v2_view1_edwin_width;
