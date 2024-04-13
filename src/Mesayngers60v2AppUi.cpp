@@ -49,6 +49,10 @@ void CMesayngers60v2AppUi::HandleCommandL(TInt aCommand) {
             Exit();
             break;
         }
+        case EAknExEditorCmdSelectEdwin1:
+        case EAknExEditorCmdSelectEdwin2:
+            iAppContainer->FocusTo(aCommand);
+            break;
         case Emesayngers60v2CmdAppTest:
         {
             iEikonEnv->InfoMsg(_L("test"));
