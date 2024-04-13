@@ -15,7 +15,7 @@
 #include <barsread.h>
 #include <eikedwin.h>
 
-const TInt KNumberOfControls = 4;
+const TInt KNumberOfControls = 3;
 
 enum TControls {
     ELabel,
@@ -72,8 +72,8 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
             return iToDoLabel;
         case EExtLabel:
             return iExtLabel;
-        case EEdwin:
-            return iEdwin;
+        //case EEdwin:
+        //    return iEdwin;
         default:
             return NULL;
     }
