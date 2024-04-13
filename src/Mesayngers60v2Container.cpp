@@ -18,14 +18,15 @@
 #include "mesayngers60v2.hrh"
 #include "Mesayngers60v2Container.h"
 
-const TInt KNumberOfControls = 4;
+const TInt KNumberOfControls = 5;
 const TInt KBufLength = 64;
 
 enum TControls {
     ELabel,
     EToDoLabel,
     EExtLabel,
-    EEdwin
+    EEdwin,
+    EExtEdwin
 };
 
 CMesayngers60v2Container::CMesayngers60v2Container()
@@ -53,14 +54,22 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
 
     TResourceReader reader;
     TBuf<KBufLength> text;
-    iCoeEnv->CreateResourceReaderLC(reader, R_MESAYNGERS60V2_VIEW1_EDWIN);
+    iCoeEnv->CreateResourceReaderLC(reader, R_MESAYNGERS60V2_EDWIN);
+    
     iEdwin = new (ELeave) CEikEdwin;
     iEdwin->SetContainerWindowL(*this);
     iEdwin->ConstructFromResourceL(reader);
     CleanupStack::PopAndDestroy(); 
     iEdwin->SetExtent(TPoint(10, 60), iEdwin->MinimumSize());
     iEdwin->SetFocus(ETrue);
-    
+
+    iExtEdwin = new (ELeave) CEikEdwin;
+    iExtEdwin->SetContainerWindowL(*this);
+    iExtEdwin->ConstructFromResourceL(reader);
+    CleanupStack::PopAndDestroy(); 
+    iExtEdwin->SetExtent(TPoint(10, 80), iExtEdwin->MinimumSize());
+    iExtEdwin->SetFocus(ETrue);
+
     SetRect(aRect);
     ActivateL();
 }
@@ -70,6 +79,7 @@ CMesayngers60v2Container::~CMesayngers60v2Container() {
     delete iToDoLabel;
     delete iExtLabel;
     delete iEdwin;
+    delete iExtEdwin;
 }
 
 void CMesayngers60v2Container::SizeChanged() {
@@ -89,6 +99,8 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
             return iExtLabel;
         case EEdwin:
            return iEdwin;
+        case EExtEdwin:
+            return iExtEdwin;
         default:
             return NULL;
     }
@@ -98,6 +110,11 @@ void CMesayngers60v2Container::FocusTo(TInt aCommand) {
     switch(aCommand) {
         case EAknExEditorCmdSelectEdwin1:
             iEdwin->SetFocus(ETrue);
+            iExtEdwin->SetFocus(EFalse);
+            break;
+        case EAknExEditorCmdSelectEdwin2:
+            iExtEdwin->SetFocus(ETrue);
+            iEdwin->SetFocus(EFalse);
             break;
         default:
             break;
