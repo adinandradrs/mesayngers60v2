@@ -21,16 +21,19 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iLabel = new (ELeave) CEikLabel;
     iLabel->SetContainerWindowL( *this );
     iLabel->SetTextL( _L("Hello world Symbian") );
+    iLabel->SetExtent( TPoint(10, 10), iLabel->MinimumSize() );
 
     iToDoLabel = new (ELeave) CEikLabel;
     iToDoLabel->SetContainerWindowL( *this );
     iToDoLabel->SetTextL( _L("Adinandra D. is here") );
+    iToDoLabel->SetExtent( TPoint(10, 20), iToDoLabel->MinimumSize() );
 
     //TResourceReader reader;
     
     iExtLabel = new (ELeave) CEikLabel;
     iExtLabel->SetContainerWindowL( *this );
     iExtLabel->SetTextL( _L("Testing") );
+    iExtLabel->SetExtent( TPoint(10, 30), iExtLabel->MinimumSize() );
 
     SetRect(aRect);
     ActivateL();
@@ -43,9 +46,8 @@ CMesayngers60v2Container::~CMesayngers60v2Container() {
 }
 
 void CMesayngers60v2Container::SizeChanged() {
-    iLabel->SetExtent( TPoint(10, 10), iLabel->MinimumSize() );
-    iToDoLabel->SetExtent( TPoint(10, 20), iToDoLabel->MinimumSize() );
-    iExtLabel->SetExtent( TPoint(10, 30), iExtLabel->MinimumSize() );
+    
+    
 }
 
 TInt CMesayngers60v2Container::CountComponentControls() const {
