@@ -34,6 +34,8 @@ SYSTEMINCLUDE   . \epoc32\include
 
 LIBRARY euser.lib apparc.lib cone.lib eikcore.lib 
 LIBRARY eikcoctl.lib avkon.lib
+LIBRARY bafl.lib eikdlg.lib
+LIBRARY etext.lib eikctl.lib
 
 AIF mesayngers60v2.aif ..\aif mesayngers60v2aif.rss c8 context_pane_icon.bmp context_pane_icon_mask.bmp list_icon.bmp list_icon_mask.bmp
 
