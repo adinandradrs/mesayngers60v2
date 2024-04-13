@@ -14,6 +14,7 @@
 #define MESAYNGERS60V2CONTAINER_H
 
 #include <coecntrl.h>
+#include <aknview.h>
    
 class CEikLabel;
 class CEikEdwin;
