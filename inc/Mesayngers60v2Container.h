@@ -39,11 +39,8 @@ class CMesayngers60v2Container : public CCoeControl, MCoeControlObserver {
         void HandleControlEventL(CCoeControl* aControl,TCoeEvent aEventType);
 
     private:        
-        CEikLabel* iLabel;
-        CEikLabel* iToDoLabel;
-        CEikLabel* iExtLabel;
-        CEikEdwin* iEdwin;
-        CEikEdwin* iExtEdwin;
+        CEikLabel* iLblChatFld;
+        CEikEdwin* iChatFld;
 
 };
 

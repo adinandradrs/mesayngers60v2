@@ -49,13 +49,14 @@ void CMesayngers60v2AppUi::HandleCommandL(TInt aCommand) {
             Exit();
             break;
         }
-        case EAknExEditorCmdSelectEdwin1:
-        case EAknExEditorCmdSelectEdwin2:
-            iAppContainer->FocusTo(aCommand);
-            break;
-        case Emesayngers60v2CmdAppTest:
+        case EAknCmdAbout:
         {
-            iEikonEnv->InfoMsg(_L("test"));
+            iEikonEnv->InfoMsg(_L("About..."));
+            break;
+        }
+        case EAknCmdSendMessage:
+        {
+            iEikonEnv->InfoMsg(_L("Sending..."));
             break;
         }
         default:

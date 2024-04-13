@@ -18,68 +18,44 @@
 #include "mesayngers60v2.hrh"
 #include "Mesayngers60v2Container.h"
 
-const TInt KNumberOfControls = 5;
+const TInt KNumberOfControls = 2;
 const TInt KBufLength = 64;
 
 enum TControls {
-    ELabel,
-    EToDoLabel,
-    EExtLabel,
-    EEdwin,
-    EExtEdwin
+    ELblChatFld,
+    EChatFld
 };
 
 CMesayngers60v2Container::CMesayngers60v2Container()
-    :iLabel(NULL), iToDoLabel(NULL),
-     iExtLabel(NULL), iEdwin(NULL) {
+    :iLblChatFld(NULL), iChatFld(NULL) {
 }
 
 void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     CreateWindowL();
     
-    iLabel = new (ELeave) CEikLabel;
-    iLabel->SetContainerWindowL( *this );
-    iLabel->SetTextL( _L("Hello world Symbian") );
-    iLabel->SetExtent( TPoint(10, 10), iLabel->MinimumSize() );
-
-    iToDoLabel = new (ELeave) CEikLabel;
-    iToDoLabel->SetContainerWindowL( *this );
-    iToDoLabel->SetTextL( _L("Adinandra D. is here") );
-    iToDoLabel->SetExtent( TPoint(10, 20), iToDoLabel->MinimumSize() );
-    
-    iExtLabel = new (ELeave) CEikLabel;
-    iExtLabel->SetContainerWindowL( *this );
-    iExtLabel->SetTextL( _L("Testing") );
-    iExtLabel->SetExtent( TPoint(10, 30), iExtLabel->MinimumSize() );
+    iLblChatFld = new (ELeave) CEikLabel;
+    iLblChatFld->SetContainerWindowL( *this );
+    iLblChatFld->SetTextL( _L("Message") );
+    iLblChatFld->SetExtent( TPoint(10, 40), iLblChatFld->MinimumSize() );
 
     TResourceReader reader;
     TBuf<KBufLength> text;
-
-    iCoeEnv->CreateResourceReaderLC(reader, R_MESAYNGERS60V2_EDWIN);
-    iEdwin = new (ELeave) CEikEdwin;
-    iEdwin->SetContainerWindowL(*this);
-    iEdwin->ConstructFromResourceL(reader);
+    
+    iCoeEnv->CreateResourceReaderLC(reader, R_MESAYNGERS60V2_CHAT_FLD);
+    iChatFld = new (ELeave) CEikEdwin;
+    iChatFld->SetContainerWindowL(*this);
+    iChatFld->ConstructFromResourceL(reader);
     CleanupStack::PopAndDestroy(); 
-    iEdwin->SetExtent(TPoint(10, 60), iEdwin->MinimumSize());
-    iEdwin->SetFocus(ETrue);
-
-    iExtEdwin = new (ELeave) CEikEdwin;
-    iExtEdwin->SetContainerWindowL(*this);
-    iCoeEnv->CreateResourceReaderLC(reader, R_MESAYNGERS60V2_EXTRA_EDWIN);
-    iExtEdwin->ConstructFromResourceL(reader);
-    CleanupStack::PopAndDestroy(); 
-    iExtEdwin->SetExtent(TPoint(10, 100), iExtEdwin->MinimumSize());
+    iChatFld->SetExtent(TPoint(10, 60), iChatFld->MinimumSize());
+    iChatFld->SetFocus(ETrue);
 
     SetRect(aRect);
     ActivateL();
 }
 
 CMesayngers60v2Container::~CMesayngers60v2Container() {
-    delete iLabel;
-    delete iToDoLabel;
-    delete iExtLabel;
-    delete iEdwin;
-    delete iExtEdwin;
+    delete iLblChatFld;
+    delete iChatFld;
 }
 
 void CMesayngers60v2Container::SizeChanged() {
@@ -91,16 +67,10 @@ TInt CMesayngers60v2Container::CountComponentControls() const {
 
 CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
     switch ( aIndex ) {
-        case ELabel:
-            return iLabel;
-        case EToDoLabel:
-            return iToDoLabel;
-        case EExtLabel:
-            return iExtLabel;
-        case EEdwin:
-           return iEdwin;
-        case EExtEdwin:
-            return iExtEdwin;
+        case ELblChatFld:
+            return iLblChatFld;
+        case EChatFld:
+            return iChatFld;
         default:
             return NULL;
     }
@@ -108,30 +78,12 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
 
 void CMesayngers60v2Container::FocusTo(TInt aCommand) {
     switch(aCommand) {
-        case EAknExEditorCmdSelectEdwin1:
-            iEdwin->SetFocus(ETrue);
-            iExtEdwin->SetFocus(EFalse);
-            break;
-        case EAknExEditorCmdSelectEdwin2:
-            iExtEdwin->SetFocus(ETrue);
-            iEdwin->SetFocus(EFalse);
-            break;
         default:
             break;
-        }
+    }
 }
 
 TKeyResponse CMesayngers60v2Container::OfferKeyEventL(const TKeyEvent& aKeyEvent, TEventCode aType) {
-    if (iEdwin) {
-        if (iEdwin->IsFocused()) {
-            return iEdwin->OfferKeyEventL(aKeyEvent, aType);
-        }
-    }
-    if (iExtEdwin) {
-        if (iExtEdwin->IsFocused()) {
-            return iExtEdwin->OfferKeyEventL(aKeyEvent, aType);
-        }
-    }
     return EKeyWasNotConsumed;
 }
 

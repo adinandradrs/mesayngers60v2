@@ -22,8 +22,8 @@ enum Tmesayngers60v2CommandIds {
 };
 
 enum TAknExEditorViewMenuCommands {
-    EAknExEditorCmdSelectEdwin1 = 6300,
-    EAknExEditorCmdSelectEdwin2
+    EAknCmdAbout = 6300,
+    EAknCmdSendMessage
 };
 
 #endif
