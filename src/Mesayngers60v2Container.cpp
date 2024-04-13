@@ -54,7 +54,7 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
 
     TResourceReader reader;
     TBuf<KBufLength> text;
-    
+
     iCoeEnv->CreateResourceReaderLC(reader, R_MESAYNGERS60V2_EDWIN);
     iEdwin = new (ELeave) CEikEdwin;
     iEdwin->SetContainerWindowL(*this);
@@ -68,8 +68,7 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iCoeEnv->CreateResourceReaderLC(reader, R_MESAYNGERS60V2_EXTRA_EDWIN);
     iExtEdwin->ConstructFromResourceL(reader);
     CleanupStack::PopAndDestroy(); 
-    iExtEdwin->SetExtent(TPoint(10, 80), iExtEdwin->MinimumSize());
-    iExtEdwin->SetFocus(ETrue);
+    iExtEdwin->SetExtent(TPoint(10, 100), iExtEdwin->MinimumSize());
 
     SetRect(aRect);
     ActivateL();
