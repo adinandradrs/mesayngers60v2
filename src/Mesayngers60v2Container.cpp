@@ -59,7 +59,8 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iEdwin->ConstructFromResourceL(reader);
     CleanupStack::PopAndDestroy(); 
     iEdwin->SetExtent(TPoint(10, 60), iEdwin->MinimumSize());
-
+    iEdwin->SetFocus(ETrue);
+    
     SetRect(aRect);
     ActivateL();
 }
