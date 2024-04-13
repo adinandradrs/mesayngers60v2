@@ -23,11 +23,10 @@ class CMesayngers60v2Container : public CCoeControl, MCoeControlObserver {
     public:
         CMesayngers60v2Container();
         void ConstructL(const TRect& aRect);
-        ~CMesayngers60v2Container();
+        virtual ~CMesayngers60v2Container();
 
     public:
-
-    public:
+        void FocusTo(TInt aCommand);
 
     private:
         void SizeChanged();
