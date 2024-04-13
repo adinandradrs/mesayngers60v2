@@ -14,6 +14,7 @@
 #include <barsread.h>
 #include <eikedwin.h>
 
+#include "mesayngers60v2.rsg"
 #include "mesayngers60v2.hrh"
 #include "Mesayngers60v2Container.h"
 
