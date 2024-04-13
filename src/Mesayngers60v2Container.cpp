@@ -93,6 +93,16 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
     }
 }
 
+void CMesayngers60v2Container::FocusTo(TInt aCommand) {
+    switch(aCommand) {
+        case EAknExEditorCmdSelectEdwin1:
+            iEdwin->SetFocus(ETrue);
+            break;
+        default:
+            break;
+        }
+}
+
 void CMesayngers60v2Container::Draw(const TRect& aRect) const {
     CWindowGc& gc = SystemGc();
     gc.SetPenStyle( CGraphicsContext::ENullPen );
