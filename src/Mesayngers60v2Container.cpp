@@ -13,7 +13,21 @@
 #include "Mesayngers60v2Container.h"
 #include <eiklabel.h>
 #include <barsread.h>
-#include <eikedwin.h> 
+#include <eikedwin.h>
+
+const TInt KNumberOfControls = 3;
+
+enum TControls {
+    ELabel,
+    EToDoLabel,
+    EExtLabel,
+    EEdwin
+};
+
+CMesayngers60v2Container::CMesayngers60v2Container()
+    :iLabel(NULL), iToDoLabel(NULL),
+     iExtLabel(NULL), iEdwin(NULL) {
+}
 
 void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     CreateWindowL();
@@ -27,8 +41,6 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iToDoLabel->SetContainerWindowL( *this );
     iToDoLabel->SetTextL( _L("Adinandra D. is here") );
     iToDoLabel->SetExtent( TPoint(10, 20), iToDoLabel->MinimumSize() );
-
-    //TResourceReader reader;
     
     iExtLabel = new (ELeave) CEikLabel;
     iExtLabel->SetContainerWindowL( *this );
@@ -46,22 +58,22 @@ CMesayngers60v2Container::~CMesayngers60v2Container() {
 }
 
 void CMesayngers60v2Container::SizeChanged() {
-    
-    
 }
 
 TInt CMesayngers60v2Container::CountComponentControls() const {
-    return 3;
+    return KNumberOfControls;
 }
 
 CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
     switch ( aIndex ) {
-        case 0:
+        case ELabel:
             return iLabel;
-        case 1:
+        case EToDoLabel:
             return iToDoLabel;
-        case 2:
+        case EExtLabel:
             return iExtLabel;
+        //case EEdwin:
+        //    return iEdwin;
         default:
             return NULL;
     }
