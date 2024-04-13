@@ -96,6 +96,7 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
 void CMesayngers60v2Container::Draw(const TRect& aRect) const {
     CWindowGc& gc = SystemGc();
     gc.SetPenStyle( CGraphicsContext::ENullPen );
+    gc.SetBrushColor( KRgbGray );
     gc.SetBrushStyle( CGraphicsContext::ESolidBrush );
     gc.DrawRect( aRect );
 }
