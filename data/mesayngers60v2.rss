@@ -76,7 +76,9 @@ RESOURCE MENU_PANE r_mesayngers60v2_menu
     items =
     {
         MENU_ITEM { command = Emesayngers60v2CmdAppTest; txt = qtn_appl_test; },
-        MENU_ITEM { command = EAknCmdExit; txt = qtn_options_exit; }
+        MENU_ITEM { command = EAknCmdExit; txt = qtn_options_exit; },
+        MENU_ITEM { command = EAknExEditorCmdSelectEdwin1; txt = qtn_aknexeditor_menu_select_edwin; },
+        MENU_ITEM { command = EAknExEditorCmdSelectEdwin2; txt = qtn_aknexeditor_menu_select_ext_edwin; }
     };
 }
 

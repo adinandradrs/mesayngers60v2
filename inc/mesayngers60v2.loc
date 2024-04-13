@@ -22,4 +22,7 @@
 #define qnn_mesayngers60v2_edwin_height      1
 #define qnn_mesayngers60v2_edwin_maxlength   10
 
+#define qtn_aknexeditor_menu_select_edwin "Select Edwin"
+#define qtn_aknexeditor_menu_select_ext_edwin "Select Extra Edwin"
+#define qtn_appl_test "Test"
 // End of File
