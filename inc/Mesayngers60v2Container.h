@@ -33,6 +33,9 @@ class CMesayngers60v2Container : public CCoeControl, MCoeControlObserver {
         TInt CountComponentControls() const;
         CCoeControl* ComponentControl(TInt aIndex) const;
         void Draw(const TRect& aRect) const;
+        TKeyResponse OfferKeyEventL(const TKeyEvent& aKeyEvent, TEventCode aType);
+
+    private:
         void HandleControlEventL(CCoeControl* aControl,TCoeEvent aEventType);
 
     private:        

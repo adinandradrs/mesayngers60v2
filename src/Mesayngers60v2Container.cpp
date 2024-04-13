@@ -121,6 +121,20 @@ void CMesayngers60v2Container::FocusTo(TInt aCommand) {
         }
 }
 
+TKeyResponse CMesayngers60v2Container::OfferKeyEventL(const TKeyEvent& aKeyEvent, TEventCode aType) {
+    if (iEdwin) {
+        if (iEdwin->IsFocused()) {
+            return iEdwin->OfferKeyEventL(aKeyEvent, aType);
+        }
+    }
+    if (iExtEdwin) {
+        if (iExtEdwin->IsFocused()) {
+            return iExtEdwin->OfferKeyEventL(aKeyEvent, aType);
+        }
+    }
+    return EKeyWasNotConsumed;
+}
+
 void CMesayngers60v2Container::Draw(const TRect& aRect) const {
     CWindowGc& gc = SystemGc();
     gc.SetPenStyle( CGraphicsContext::ENullPen );
