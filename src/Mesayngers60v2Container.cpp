@@ -15,7 +15,7 @@
 #include <barsread.h>
 #include <eikedwin.h>
 
-const TInt KNumberOfControls = 3;
+const TInt KNumberOfControls = 4;
 
 enum TControls {
     ELabel,
@@ -47,6 +47,11 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iExtLabel->SetTextL( _L("Testing") );
     iExtLabel->SetExtent( TPoint(10, 30), iExtLabel->MinimumSize() );
 
+    iEdwin = new (ELeave) CEikEdwin;
+    iEdwin->SetContainerWindowL(*this);
+    CleanupStack::PopAndDestroy(); 
+    iEdwin->SetExtent(TPoint(10, 60), iEdwin->MinimumSize());
+
     SetRect(aRect);
     ActivateL();
 }
@@ -72,8 +77,8 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
             return iToDoLabel;
         case EExtLabel:
             return iExtLabel;
-        //case EEdwin:
-        //    return iEdwin;
+        case EEdwin:
+           return iEdwin;
         default:
             return NULL;
     }
@@ -82,11 +87,9 @@ CCoeControl* CMesayngers60v2Container::ComponentControl(TInt aIndex) const {
 void CMesayngers60v2Container::Draw(const TRect& aRect) const {
     CWindowGc& gc = SystemGc();
     gc.SetPenStyle( CGraphicsContext::ENullPen );
-    gc.SetBrushColor( KRgbGray );
     gc.SetBrushStyle( CGraphicsContext::ESolidBrush );
     gc.DrawRect( aRect );
 }
 
 void CMesayngers60v2Container::HandleControlEventL(CCoeControl*, TCoeEvent) {
-    
 }
