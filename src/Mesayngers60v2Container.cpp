@@ -14,7 +14,6 @@
 #include <eiklabel.h>
 #include <barsread.h>
 #include <eikedwin.h>
-#include <AknExEditor.rsg>
 
 const TInt KNumberOfControls = 4;
 const TInt KBufLength = 64;
