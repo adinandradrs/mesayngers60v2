@@ -36,7 +36,7 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iLblChatFld = new (ELeave) CEikLabel;
     iLblChatFld->SetContainerWindowL( *this );
     iLblChatFld->SetTextL( _L("Message") );
-    iLblChatFld->SetExtent( TPoint(5, 60), iLblChatFld->MinimumSize() );
+    iLblChatFld->SetExtent( TPoint(5, 65), iLblChatFld->MinimumSize() );
 
     TResourceReader reader;
     TBuf<KBufLength> text;
@@ -46,7 +46,7 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iChatFld->SetContainerWindowL(*this);
     iChatFld->ConstructFromResourceL(reader);
     CleanupStack::PopAndDestroy(); 
-    iChatFld->SetExtent(TPoint(5, 80), iChatFld->MinimumSize());
+    iChatFld->SetExtent(TPoint(5, 85), iChatFld->MinimumSize());
     iChatFld->SetFocus(ETrue);
     iChatFld->SetWordWrapL(ETrue);
 
