@@ -36,18 +36,19 @@ void CMesayngers60v2Container::ConstructL(const TRect& aRect) {
     iLblChatFld = new (ELeave) CEikLabel;
     iLblChatFld->SetContainerWindowL( *this );
     iLblChatFld->SetTextL( _L("Message") );
-    iLblChatFld->SetExtent( TPoint(10, 40), iLblChatFld->MinimumSize() );
+    iLblChatFld->SetExtent( TPoint(5, 60), iLblChatFld->MinimumSize() );
 
     TResourceReader reader;
     TBuf<KBufLength> text;
-    
+
     iCoeEnv->CreateResourceReaderLC(reader, R_MESAYNGERS60V2_CHAT_FLD);
     iChatFld = new (ELeave) CEikEdwin;
     iChatFld->SetContainerWindowL(*this);
     iChatFld->ConstructFromResourceL(reader);
     CleanupStack::PopAndDestroy(); 
-    iChatFld->SetExtent(TPoint(10, 60), iChatFld->MinimumSize());
+    iChatFld->SetExtent(TPoint(5, 80), iChatFld->MinimumSize());
     iChatFld->SetFocus(ETrue);
+    iChatFld->SetWordWrapL(ETrue);
 
     SetRect(aRect);
     ActivateL();
