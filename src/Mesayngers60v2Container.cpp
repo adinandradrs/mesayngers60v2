@@ -10,10 +10,12 @@
 * ============================================================================
 */
 
-#include "Mesayngers60v2Container.h"
 #include <eiklabel.h>
 #include <barsread.h>
 #include <eikedwin.h>
+
+#include "mesayngers60v2.hrh"
+#include "Mesayngers60v2Container.h"
 
 const TInt KNumberOfControls = 4;
 const TInt KBufLength = 64;
