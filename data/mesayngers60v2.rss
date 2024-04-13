@@ -24,10 +24,6 @@ NAME    AWIZ // 4 letter ID
 #include <avkon.mbg>
 #include <avkon.loc>
 
-#include "AknExEditor.rh"
-#include "aknexeditor.hrh"
-#include "aknexeditor.loc"
-
 //  RESOURCE DEFINITIONS 
 
 RESOURCE RSS_SIGNATURE { }
