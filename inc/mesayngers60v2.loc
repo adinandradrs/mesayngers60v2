@@ -18,8 +18,8 @@
 #define qtn_app_caption_string "MesayngerIM"
 #define qtn_app_short_caption_string "MesayngerIM"
 
-#define qnn_mesayngers60v2_view1_edwin_width       10
-#define qnn_mesayngers60v2_view1_edwin_height      1
-#define qnn_mesayngers60v2_view1_edwin_maxlength   10
+#define qnn_mesayngers60v2_edwin_width       10
+#define qnn_mesayngers60v2_edwin_height      1
+#define qnn_mesayngers60v2_edwin_maxlength   10
 
 // End of File
